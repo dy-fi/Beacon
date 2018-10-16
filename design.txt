@@ -1,0 +1,56 @@
+Beacon- meetup app
+
+MVP----------------------
+-users can coordinate meetings
+-users can send locations with routes
+
+v0-----------------------
+-users can see other users locations and share their own
+-can organize into events, share it publicly
+-can show users the fastest path to an event by clicking a link sent by another user
+-can see when they should leave to arrive on time
+
+v1-----------------------
+-can "expect" people at certain times and alert you if they are running late
+-users can add stops to their routes, and other's routes they have permission for
+-users can choose to show only when they are close, only when they are leaving, or their location at all times until they arrive
+-can tell if a user is off the fastest route, and alert you if they stray too far
+
+
+RESOURCES
+-events
+-users
+-invitations
+
+
+CRUD events
+-GET all public events around you- (map)
+-GET a single event- (map)
+-PUT a new event
+-POST update event
+-PUT/POST user location permissions
+-POST routes, stops
+-DELETE events
+
+CRUD users
+-GET profile
+-GET events
+-PUT new user
+-POST update user
+-DELETE user
+
+CRUD invitations
+-GET invitations
+-PUT new invitations
+-POST update invitations
+-DELETE cancel invitations
+
+USER STORIES
+
+MVP
+-Hey I'm Martin and I'm setting up a social gathering.  I use beacon to let my friends know where to go and where everyone is.  
+
+-Hey I'm Frieda and I'm meeting with friends.  My friends send me a beacon so I can see where we're meeting, who's already there, and
+who is going to be.  Then the app gives me the fastest route automatically, but my friend wants me to pickup wine.  The app shows me
+where my friend suggested, and gives me the fastest route to the store, and then to the meetup.  I get stuck in traffic but my friends
+can see that it's because of traffic so they wait for me.
