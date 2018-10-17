@@ -1,0 +1,22 @@
+<fieldset>
+    <input type="hidden" value="{{event._id}}" name="eventId">
+    <legend>Create an event</legend>
+    <!-- TITLE -->
+    <div class="form-group">
+        <label for="event-title">Title</label><br>
+        <input type="text" id="event-title" name="title" placeholder="title">
+    </div>
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+        <label for="event-description">Description</label><br>
+        <textarea id="event-description" name="description" rows="8" placeholder="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="event-time">Time</label><br>
+        <input type="datetime-local" id="event-time" name="time">
+    </div>
+    <div class="form-group">
+        <label for="event-location">Location</label><br> //google places autocomplete
+        <input type="text" id="event-location" name="location" placeholder="Location">
+    </div>
+</fieldset>
