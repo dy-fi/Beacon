@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/beacon')
+mongoose.connect('mongodb://localhost/beacon', {  useNewUrlParser: true });
 
 module.exports = mongoose.model('Event', {
     name: String,

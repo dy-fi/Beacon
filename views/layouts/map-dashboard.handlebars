@@ -38,7 +38,7 @@
                 center: userLatLng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
-            // Draw the map
+            // MAP
             var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
 
             // CUSTOMIZE MARKER LATER
@@ -77,6 +77,8 @@
         window.onload = geolocateUser;
 
         // ADD EVENT LISTENERS
+
+
     </script>
     <!-- This makes the API info load asyncronously -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDBzbximJbwANr5IfpsXzShPpT4FJXjDI&callback=initMap" async defer></script>
@@ -86,6 +88,21 @@
 
     {{> navbar}}
     {{> map}}
+
+    <div class="col-lg-4" id="agenda">
+        {{#each event}}
+            <h4>Name: {{this.name}}</h4>
+            <p>
+                Description: {{this.description}}
+                {{this.date}}
+            </p></br>
+
+        {{/each}}
+    </div>
+    <div class="col-lg-4" id="stops">
+        {{#each event}}
+            <h3>{{this.stops}}
+        {{/each}}
     <div class="container">
         {{{body}}}
     </div>

@@ -1,5 +1,6 @@
 // dot env
 require('dotenv').config();
+
 // Declarations
 const express = require('express')
 const exphbs = require('express-handlebars')
@@ -12,7 +13,7 @@ const session = require('express-session')
 const port = process.env.PORT || 3000;
 
 // app
-const app = express()
+const app = express();
 
 // Express handlebars
 app.engine('handlebars', exphbs({
@@ -27,14 +28,14 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 
 // mongoose connect
-const db = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beacon', {
+const db = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beacon',{
     useNewUrlParser: true
-})
+});
 
 // google maps
 const googleMapsClient = require('@google/maps').createClient({
     key: process.env.MAPS_API_KEY
-})
+});
 
 // google geolocation
 const geolocation = require ('google-geolocation') ({
