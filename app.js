@@ -8,8 +8,16 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const session = require('express-session')
 
+// port
+const port = process.env.PORT || 3000;
+
 // app
 const app = express()
+
+// mongoose connect
+const db = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/app', {
+    useNewUrlParser: true
+})
 
 // static scripts and styles in public
 app.use(express.static('public'));
@@ -19,12 +27,10 @@ const googleMapsClient = require('@google/maps').createClient({
     key: process.env.MAPS_API_KEY
 })
 
-// // mongoose connect
-// const db = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/app', {
-//     useNewUrlParser: true
-// }).catch(e => {
-//     console.log(e)
-// })
+// google geolocation
+const geolocation = require ('google-geolocation') ({
+  key: 'api key'
+});
 
 // session middleware
 app.use(function (req, res, next) {
@@ -32,8 +38,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-// port
-const port = process.env.PORT || 3000;
 
 // Express handlebars
 app.engine('handlebars', exphbs({
@@ -44,10 +48,9 @@ app.set('view engine', 'handlebars');
 // Method Override
 app.use(methodOverride('_method'));
 
-// Body parser
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+// Body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Controllers
 const handleEventRoutes = require('./controllers/events')

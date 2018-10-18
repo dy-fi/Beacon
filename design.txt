@@ -1,7 +1,7 @@
 Beacon- meetup app
 
 MVP----------------------
-Basically the dashboard for a basic event meeting 
+Basically the dashboard for a basic event meeting
 -users can coordinate meetings
 -users can send locations with routes
 
@@ -55,3 +55,9 @@ MVP
 who is going to be.  Then the app gives me the fastest route automatically, but my friend wants me to pickup wine.  The app shows me
 where my friend suggested, and gives me the fastest route to the store, and then to the meetup.  I get stuck in traffic but my friends
 can see that it's because of traffic so they wait for me.
+
+
+
+CUSTOMIZE GOOGLE MAPS MARKER  map.hbs
+ADD EVENT LISTENERS
+PLACES AUTOCOMPLETE search.hbs 
