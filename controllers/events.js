@@ -9,7 +9,8 @@ const Event = require('../models/events')
 
 // SHOW ALL
 eventsRouter.get('/', (req, res) => {
-    res.render('beacon-index.handlebars')
+    var query = { status: "public" }
+    res.render('beacon-index.handlebars', {query})
 })
 
 // SHOW ONE
