@@ -1,6 +1,7 @@
 Beacon- meetup app
 
 MVP----------------------
+Basically the dashboard for a basic event meeting 
 -users can coordinate meetings
 -users can send locations with routes
 
@@ -48,7 +49,7 @@ CRUD invitations
 USER STORIES
 
 MVP
--Hey I'm Martin and I'm setting up a social gathering.  I use beacon to let my friends know where to go and where everyone is.  
+-Hey I'm Martin and I'm setting up a social gathering.  I use beacon to let my friends know where to go and where everyone is.
 
 -Hey I'm Frieda and I'm meeting with friends.  My friends send me a beacon so I can see where we're meeting, who's already there, and
 who is going to be.  Then the app gives me the fastest route automatically, but my friend wants me to pickup wine.  The app shows me
