@@ -4,13 +4,15 @@ const eventsRouter = express.Router()
 
 // models
 const Event = require('../models/events')
+const User = require('../models/users')
 
 
 // READ -ALL PUBLIC EVENTS
 eventsRouter.get('/', (req, res) => {
-    var query = { status: "public" }
+    var query = {
+        status: "public"
+    }
     Event.find(query).then(events => {
-        console.log('This is the events: ' + events)
         res.render('beacon-index', {
             events: events
         })
@@ -37,19 +39,17 @@ eventsRouter.post('/events', (req, res) => {
 
 // READ -ONE
 eventsRouter.get('/events/:id', (req, res) => {
-    // res.send('Hello World!')
     Event.findById(req.params.id).then(events => {
-        res.render('event-dashboard', {
-            title: 'Dashboard',
-            layout: 'map-dashboard',
-            events: events,
+        User.find({
+            goingTo: req.params.id,
+        }).then(users => {
+            res.render('event-show', {
+                events: events,
+                users: users,
+            });
         })
-    }).catch(e => {
-        console.log(e);
     })
 })
-
-
 
 // EDIT
 eventsRouter.get('/events/:id/edit', function(req, res) {
@@ -66,8 +66,8 @@ eventsRouter.put('/events/:id', (req, res) => {
         .then(review => {
             res.redirect('events/{events._id}')
         }).catch(e => {
-        console.log(e);
-    })
+            console.log(e);
+        })
 })
 
 // DESTROY

@@ -1,5 +1,15 @@
-<h1>Public Events</h1>
-
-{{#each events}}
-    {{> event}}
-{{/each}}
+<div class="row">
+    <div class="col-lg-6 sm-12">
+        <h1>Public Events</h1>
+        {{#each events}}
+            {{> event}}
+        {{/each}}
+    </div>
+    <div class="col-lg-6 sm-12">
+        <form method="get" action="/users/login">
+            <button type="submit">Login</button>
+        </form>
+        <form method="get" action="/users/register">
+            <button type="submit">Register</button>
+        </form>
+</div>

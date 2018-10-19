@@ -1,12 +1,20 @@
 const mongoose = require('mongoose')
-const schema = mongoose.Schema
+const Schema = mongoose.Schema
 
 mongoose.connect('mongodb://localhost/beacon', {  useNewUrlParser: true });
 
 module.exports = mongoose.model('Event', {
     name: String,
     description: String,
-    date: String,
+    date: { type: Date, default: Date.now },
     location: String,
     status: String,
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'owner'
+    },
+    going: [{
+        type: Schema.Types.ObjectId,
+        ref: 'going'
+    }]
 })

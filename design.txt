@@ -60,4 +60,5 @@ can see that it's because of traffic so they wait for me.
 
 CUSTOMIZE GOOGLE MAPS MARKER  map.hbs
 ADD EVENT LISTENERS
-PLACES AUTOCOMPLETE search.hbs 
+PLACES AUTOCOMPLETE search.hbs
+ADD EVENT IMAGES event-form, event.hbs
