@@ -3,10 +3,10 @@
         <form method="POST" action="/event/{{event._id}}?_method=PUT">
             {{> event-form}}
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">Save Review</button>
+                <button class="btn btn-primary" type="submit">Post Event</button>
             </div>
-            <form method="POST" action="/reviews/{{review._id}}?_method=DELETE">
-                <button class="btn btn-primary" type="submit">Delete</button>
+            <form method="POST" action="/reviews/{{event._id}}?_method=DELETE">
+                <button class="btn btn-primary" type="submit">Delete Event</button>
             </form>
         </form>
     </div>

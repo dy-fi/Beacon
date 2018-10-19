@@ -1,24 +1,35 @@
 <fieldset>
     <input type="hidden" value="{{event._id}}" name="eventId">
     <legend>Create an event</legend>
+
     <!-- TITLE -->
     <div class="form-group">
         <label for="event-name">Event name</label><br>
         <input type="text" id="event-name" name="name" placeholder="Beacon">
     </div>
+
     <!-- DESCRIPTION -->
     <div class="form-group">
         <label for="event-description">Description</label><br>
         <textarea id="event-description" name="description" rows="8" placeholder="description"></textarea>
     </div>
+
     <!-- TIME -->
     <div class="form-group">
         <label for="event-time">Time</label><br>
-        <input type="datetime-local" id="event-time" name="time">
+        <input type="text" id="event-time" name="time">
     </div>
+
     <!-- LOCATION (using places autocomplete later) -->
     <div class="form-group">
-        <label for="event-location">Location</label><br> //google places autocomplete
+        <label for="event-location">Location</label><br>
         <input type="text" id="event-location" name="location" placeholder="Location">
+    </div>
+
+    <!-- ACCESS MODIFIER -->
+    <div class="form-group">
+        <label for="event-status">Privacy</label><br>
+        <input type="radio" id="event-status" name="status" value="private">Private<br>
+        <input type="radio" id="event-status" name="status" value="public">Public<br>
     </div>
 </fieldset>
