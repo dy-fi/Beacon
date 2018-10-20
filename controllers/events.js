@@ -51,6 +51,16 @@ eventsRouter.get('/events/:id', (req, res) => {
     })
 })
 
+// READ -ONE -EVENTS DASHBOARD
+eventsRouter.get('/events/:id/dashboard', (req, res) => {
+    Event.findById(req.params.id).then(events => {
+        res.render('events-dashboard', {
+            layout: 'map-dashboard',
+            events: events,
+        })
+    })
+})
+
 // EDIT
 eventsRouter.get('/events/:id/edit', function(req, res) {
     Event.findById(req.params.id, function(err, review) {

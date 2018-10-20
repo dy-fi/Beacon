@@ -1,112 +1,41 @@
-<!doctype html>
-<html>
-
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <title>Beacon</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" =>
     <meta charset="utf-8">
     <style>
         #map {
             height: 60%;
         }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
     </style>
-    <!-- Google maps and geolocation APIs need to be rendered on the front end -->
-    <script>
-        function writeAddressName(latLng) {
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({
-                    "location": latLng
-                },
-                function(results, status) {
-                    if (status == google.maps.GeocoderStatus.OK)
-                        document.getElementById("address").innerHTML = results[0].formatted_address;
-                    else
-                        document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
-                });
-        }
-
-        function geolocationSuccess(position) {
-            var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            // Write the formatted address
-            writeAddressName(userLatLng);
-            var myOptions = {
-                zoom: 17,
-                center: userLatLng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            // MAP
-            var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
-
-            // CUSTOMIZE MARKER LATER
-            new google.maps.Marker({
-                map: mapObject,
-                position: userLatLng
-            });
-            // Draw a circle around the user position to have an idea of the current localization accuracy
-            var circle = new google.maps.Circle({
-                center: userLatLng,
-                radius: position.coords.accuracy,
-                map: mapObject,
-                fillColor: '#328AFF',
-                fillOpacity: 0.5,
-                strokeColor: '#328AFF',
-                strokeOpacity: 1.0
-            });
-            mapObject.fitBounds(circle.getBounds());
-        }
-
-        function geolocationError(positionError) {
-            document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
-        }
-
-        function geolocateUser() {
-            // If the browser supports the Geolocation API
-            if (navigator.geolocation) {
-                var positionOptions = {
-                    timeout: 10 * 1000 // 10 seconds
-                };
-                navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
-            } else {
-                document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
-            }
-        }
-        window.onload = geolocateUser;
-
-        // ADD EVENT LISTENERS
-
-
-    </script>
-    <!-- This makes the API info load asyncronously -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDBzbximJbwANr5IfpsXzShPpT4FJXjDI&callback=initMap" async defer></script>
 </head>
 
 <body>
-
     {{> navbar}}
-    {{> map}}
-
-    <div class="col-lg-4" id="agenda">
-        {{#each event}}
-            <h4>Name: {{this.name}}</h4>
-            <p>
-                Description: {{this.description}}
-                {{this.date}}
-            </p></br>
-
-        {{/each}}
-    </div>
-    <div class="col-lg-4" id="stops">
-        {{#each event}}
-            <h3>{{this.stops}}
-        {{/each}}
-    <div class="container">
+    <div id="map"></div>
+    <div id="container">
         {{{body}}}
     </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
+    <script>
+        var map;
 
-</html>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: -34.397,
+                    lng: 150.644
+                },
+                zoom: 15
+            });
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDBzbximJbwANr5IfpsXzShPpT4FJXjDI&callback=initMap" async defer></script>
+</body>
