@@ -24,7 +24,9 @@ eventsRouter.get('/', (req, res) => {
 // NEW
 eventsRouter.get('/events/new', (req, res) => {
     // res.send('Hello world')
-    res.render('events-new', {});
+    res.render('events-new', {
+        layouts: 'event-form',
+    });
 })
 
 // CREATE
