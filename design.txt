@@ -2,8 +2,8 @@ Beacon- meetup app
 
 MVP----------------------
 Basically the dashboard for a basic event meeting
--users can coordinate meetings
--users can send locations with routes
+-users can create and share events accessible to other users
+-users can see a map with the event location
 
 v0-----------------------
 -users can see other users locations and share their own
@@ -58,7 +58,7 @@ can see that it's because of traffic so they wait for me.
 
 
 
-CUSTOMIZE GOOGLE MAPS MARKER  map.hbs
-ADD EVENT LISTENERS
-PLACES AUTOCOMPLETE search.hbs
-ADD EVENT IMAGES event-form, event.hbs
+CUSTOMIZE GOOGLE MAPS MARKER  map.hbs   |
+ADD EVENT LISTENERS                     | DONE
+PLACES AUTOCOMPLETE search.hbs          | DONE
+ADD EVENT IMAGES event-form, event.hbs  |
