@@ -22,3 +22,4 @@ function fromDateTimeLocal(BST) {
                 (this.getTimezoneOffset() * 60000)
             ).toISOString();
         }
+};

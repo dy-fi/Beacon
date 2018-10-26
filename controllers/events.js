@@ -1,6 +1,7 @@
 // dependencies
 const express = require('express')
 const eventsRouter = express.Router()
+const $ = require('jquery')
 
 // models
 const Event = require('../models/events')
@@ -24,9 +25,7 @@ eventsRouter.get('/', (req, res) => {
 // NEW
 eventsRouter.get('/events/new', (req, res) => {
     // res.send('Hello world')
-    res.render('events-new', {
-        layouts: 'event-form',
-    });
+    res.render('events-new', {});
 })
 
 // CREATE
