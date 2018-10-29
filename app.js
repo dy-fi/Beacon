@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const session = require('express-session')
 
+
 // jQueryDom
 var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -56,6 +57,7 @@ app.use(function (req, res, next) {
     res.locals.session = req.session;
     next();
 });
+
 
 // Body parser middleware
 app.use(bodyParser.json());

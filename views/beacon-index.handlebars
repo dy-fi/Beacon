@@ -1,15 +1,16 @@
 <div class="row">
-    <div class="col-lg-6 sm-12">
+    <div id="action-banner">
+        <div class="form-group col-sm-6" id="rl">
+            <a href="/users/new" class="btn btn-info">Login</a>
+        </div>
+        <div class="form-group col-sm-6" id="rl">
+            <a href="/users/new" class="btn btn-info">Register</a>
+        </div>
+    </div>
+    <div class="col-sm-12 event-list">
         <h1>Public Events</h1>
         {{#each events}}
             {{> event}}
         {{/each}}
     </div>
-    <div class="col-lg-6 sm-12">
-        <form method="get" action="/users/login">
-            <button type="submit">Login</button>
-        </form>
-        <form method="get" action="/users/register">
-            <button type="submit">Register</button>
-        </form>
 </div>
