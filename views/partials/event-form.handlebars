@@ -1,36 +1,49 @@
 <fieldset>
     <input type="hidden" value="{{event._id}}" name="eventId">
+
     <legend>Create an event</legend>
 
     <!-- TITLE -->
     <div class="form-group">
-        <label for="event-name">Event name</label><br>
-        <input type="text" id="event-name" name="name" placeholder="Beacon">
+        <label for="event-name" class="col-sm-2">Event name</label><br>
+        <div class="col-sm-10">
+            <input type="text" id="event-name" name="name" placeholder="Beacon" class="form-control">
+        </div>
     </div>
 
     <!-- DESCRIPTION -->
     <div class="form-group">
-        <label for="event-description">Description</label><br>
-        <textarea id="event-description" name="description" rows="8" placeholder="description"></textarea>
+        <label for="event-description" class="col-sm-2">Description</label><br>
+        <div class="col-sm-10">
+            <textarea id="event-description" name="description" rows="8" placeholder="description" class="form-control"></textarea>
+        </div>
     </div>
 
     <!-- TIME -->
     <div class="form-group">
-        <label for="event-time">Time</label><br>
-        <input type="text" id="event-time" name="time">
+        <label for="event-time" class="col-sm-2">Time</label><br>
+        <div class="col-sm-10">
+            <input type="text" id="event-time" name="time" class="form-control">
+        </div>
     </div>
 
     <!-- LOCATION -->
     <div class="form-group">
-        <label for="location">Location</label><br>
-        <input type="text" id="autocomplete" name="location"/>
+        <label for="location" class="col-sm-2">Location</label><br>
+        <div class="col-sm-10">
+            <input type="text" id="autocomplete" name="location" class="form-control"/>
+        </div>
     </div>
 
     <!-- ACCESS MODIFIER -->
     <div class="form-group">
-        <label for="event-status">Privacy</label><br>
-        <input type="radio" id="event-status" name="status" value="private">Private<br>
-        <input type="radio" id="event-status" name="status" value="public">Public<br>
+        <label for="event-status" class="col-sm-2">Status</label><br>
+        <div class="col-sm-1">
+            <input type="radio" id="event-status" name="status" value="private" class="form-control">Private<br>
+        </div>
+        <div class="col-sm-1">
+            <input type="radio" id="event-status" name="status" value="public" class="form-control">Public<br>
+        </div>
     </div>
     <!-- Add cover image input (type='file') and add to database with GridFs -->
 </fieldset>
