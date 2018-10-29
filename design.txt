@@ -57,8 +57,8 @@ where my friend suggested, and gives me the fastest route to the store, and then
 can see that it's because of traffic so they wait for me.
 
 
-
-CUSTOMIZE GOOGLE MAPS MARKER  map.hbs   |
-ADD EVENT LISTENERS                     | DONE
-PLACES AUTOCOMPLETE search.hbs          | DONE
-ADD EVENT IMAGES event-form, event.hbs  |
+ADD IMAGES WITH GRIDFS          | model, form   |
+CUSTOMIZE GOOGLE MAPS MARKER    | map.hbs       |
+ADD EVENT LISTENERS             |               | DONE
+PLACES AUTOCOMPLETE             | search.hbs    | DONE
+ADD EVENT IMAGES event-form,    | event.hbs     |

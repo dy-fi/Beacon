@@ -25,7 +25,9 @@ eventsRouter.get('/', (req, res) => {
 // NEW
 eventsRouter.get('/events/new', (req, res) => {
     // res.send('Hello world')
-    res.render('events-new', {});
+    res.render('events-new', {
+        layout: 'event-form',
+    });
 })
 
 // CREATE
@@ -75,7 +77,9 @@ eventsRouter.get('/events/:id/edit', function(req, res) {
 eventsRouter.put('/events/:id', (req, res) => {
     Event.findByIdAndUpdate(req.params.id, req.body)
         .then(review => {
-            res.redirect('events/{events._id}')
+            res.redirect('events/{events._id}', {
+                layout: 'event-form',
+            })
         }).catch(e => {
             console.log(e);
         })

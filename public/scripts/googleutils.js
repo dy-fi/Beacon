@@ -1,18 +1,7 @@
 // Declarations
 var options = {
-types: ['address'],
+    types: ['address'],
 }
-
-// autocomplete object
-var input = document.getElementById('autocomplete');
-var autocomplete = new google.maps.places.Autocomplete(input, options);
-
-// event trigger to save location to the database
-$(document).ready(function() {
-    $('#submit').click(function() {
-        location = $('autocomplete').value()
-    });
-});
 
 // google maps
 var map, infoWindow;

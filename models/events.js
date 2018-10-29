@@ -9,7 +9,6 @@ module.exports = mongoose.model('Event', {
     date: { type: Date, default: Date.now },
     location: String,
     status: String,
-    coverImgUrl: String, 
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'owner'
@@ -17,5 +16,5 @@ module.exports = mongoose.model('Event', {
     going: [{
         type: Schema.Types.ObjectId,
         ref: 'going'
-    }]
-})
+    }],
+});
