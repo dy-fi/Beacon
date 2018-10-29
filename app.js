@@ -44,12 +44,7 @@ const db = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beac
 
 // google maps
 const googleMapsClient = require('@google/maps').createClient({
-    key: process.env.MAPS_API_KEY
-});
-
-// google geolocation
-const geolocation = require ('google-geolocation') ({
-  key: 'api key'
+    key: 'AIzaSyDDBzbximJbwANr5IfpsXzShPpT4FJXjDI',
 });
 
 // session middleware
