@@ -38,9 +38,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 
 // mongoose connect
-const db = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beacon',{
-    useNewUrlParser: true
-});
+require('./data/beacon-db')
 
 // google maps
 const googleMapsClient = require('@google/maps').createClient({
@@ -52,7 +50,6 @@ app.use(function (req, res, next) {
     res.locals.session = req.session;
     next();
 });
-
 
 // Body parser middleware
 app.use(bodyParser.json());

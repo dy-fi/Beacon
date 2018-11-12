@@ -2,6 +2,8 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
 
+mongoose.set('debug', true);
+
 // CREATE MONGOOSE MODEL
 const UserSchema = new mongoose.Schema ({
     firstName: {
